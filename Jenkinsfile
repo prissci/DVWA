@@ -1,7 +1,7 @@
 node ('nodo_pri') {
     stage('Clonacion Repositorio') {
         git branch: 'master',
-            credentialsId: 'github',
+            credentialsId: 'githubssh',
             url: 'git@github.com:prissci/DVWA.git'
 
         sh "ls -lat"
