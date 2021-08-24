@@ -16,7 +16,4 @@ node ('nodo_pri') {
     stage('Deploy sobre EC2') {
         sh 'docker ps'
     }
-    stage('Send slack notification') {
-         slackSend color: 'good', message: 'Message from Jenkins Pipeline'
-    }
-}
+
