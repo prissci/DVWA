@@ -2,7 +2,7 @@ node ('nodo_pri') {
     stage('Clonacion Repositorio') {
         git branch: 'master',
             credentialsId: 'githubssh',
-            url: 'git@github.com:prissci/DVWA.git'
+            url: 'git@github.com:ContardoRM/DVWA.git'
 
         sh "ls -lat"
         
@@ -16,4 +16,7 @@ node ('nodo_pri') {
     stage('Deploy sobre EC2') {
         sh 'docker ps'
     }
-
+    stage('Send slack notification') {
+         slackSend color: 'good', message: 'Message from Jenkins Pipeline'
+    }
+}
